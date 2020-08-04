@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import PizzaImg from './pizzaImg';
+import Recipe from './Recipe.js';
+import Ingredients from './Ingredients.js';
+import AuthorBio from './AuthorBio.js';
+import HeaderIcons from './HeaderIcons.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// props are how parent components talk to child components -- we "pass" props from parents to children
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <header>
+          <Header />
+          <HeaderIcons />
+        </header>
+        <main>
+          <PizzaImg />
+          <Recipe />
+          <Ingredients />
+          <AuthorBio />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    );
+
+  }
 }
 
 export default App;
